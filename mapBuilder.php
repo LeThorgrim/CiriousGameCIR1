@@ -31,19 +31,7 @@
             }
         }
         
-        // Writing in a file
-        /*
-        if ($file = fopen('map.txt', 'w')){
-            for ($i = 0; $i < ($X*$Y); $i++){
-                fwrite($file, $tab[$i]);
-            }
-            fclose($file);
-        }
-        */
-        $file = fopen('map.json', 'w');
-        $json = json_encode(array_values($tab));
-        file_put_contents('map.json', $json, LOCK_EX);
-        fclose($file);
+        file_put_contents('sauvegarde.txt', $tab);
     }
     ?>
     
